@@ -1,0 +1,7 @@
+
+/.idea/
+bookapp/bookapp/__init__.py
+bookapp/bookapp/__pycache__/
+*.pyc
+bookapp/fe/__init__.py
+bookapp/fe/migrations/__init__.py
