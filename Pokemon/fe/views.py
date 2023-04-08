@@ -6,7 +6,6 @@ from django.shortcuts import render
 def pokemon(request, pokemon_id):
     response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}')
     pokemon_data = response.json()
-    print(pokemon_data)
     return render(request, 'pokemon.html', {'pokemon': pokemon_data})
 
 
