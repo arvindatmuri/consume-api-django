@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Pokemon{% endblock %}
+{% block content %}
+<h1>{{ pokemon.name }}</h1>
+<img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
+<p>Type(s): {% for type in pokemon.types %}{{ type.type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+<p>Abilities: {% for ability in pokemon.abilities %}{{ ability.ability.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+{% endblock %}

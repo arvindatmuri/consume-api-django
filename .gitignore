@@ -6,3 +6,6 @@ bookapp/bookapp/__pycache__/
 *.pyc
 bookapp/fe/__init__.py
 bookapp/fe/migrations/__init__.py
+Pokemon/Pokemon/__init__.py
+Pokemon/fe/__init__.py
+*/migrations/*
