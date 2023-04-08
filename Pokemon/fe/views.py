@@ -21,8 +21,7 @@ def pokemon_list(request):
     # Create a Paginator object to handle the pagination
     paginator = Paginator(pl, 20)
     page = paginator.get_page(page_number)
-    # print(page.object_list)
-    # print(paginator)
+    
     # Render the template with the data and pagination information
     return render(request, 'pokemon_list.html', {
         'pokemon_list': page.object_list,
