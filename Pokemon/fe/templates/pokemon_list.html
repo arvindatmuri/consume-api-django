@@ -2,6 +2,7 @@
 {% extends 'base.html' %}
 {% block title %}Pokemon List{% endblock %}
 {% block content %}
+{% load custom_filters %}
 <div class="container">
   <h1>Pokemon List</h1>
   <table class="table">
@@ -14,8 +15,9 @@
     <tbody>
       {% for pokemon in pokemon_list %}
       <tr>
-        <td>{{pokemon.url|slice:"34:"|slice:":-1"}}</td>
-        <td><a href='pokemon/{{pokemon.url|slice:"34:"|slice:":-1"}}'>{{ pokemon.name|title }}</a></td>
+<!--        <td>{{pokemon.url|slice:"34:"|slice:":-1"}}</td>-->
+        <td>{{pokemon.url|extract_id_from_url:"pokemon"}}</td>
+        <td><a href='pokemon/{{pokemon.url|extract_id_from_url:"pokemon"}}'>{{ pokemon.name|title }}</a></td>
 
       </tr>
       {% endfor %}
@@ -24,6 +26,9 @@
   <nav>
     <ul class="pagination justify-content-center">
       {% if page.has_previous %}
+      <li class="page-item">
+        <a class="page-link"  href="?page=1">First</a>
+      </li>
       <li class="page-item">
         <a class="page-link" href="?page={{ page.previous_page_number }}">Previous</a>
       </li>
@@ -38,6 +43,9 @@
       {% if page.has_next %}
       <li class="page-item">
         <a class="page-link" href="?page={{ page.next_page_number }}">Next</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link"  href="?page={{ page.paginator.num_pages }}">Last</a>
       </li>
       {% endif %}
     </ul>

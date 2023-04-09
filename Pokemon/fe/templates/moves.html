@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Pokemon{% endblock %}
 {% block content %}
-{% load custom_filters %}
-<h1 class="text-capitalize">{{ pokemon.name}}</h1>
-<div class="container">
+<h1>{{ pokemon.name | capitalize }}</h1>
 <img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
-
 <img src="{{ pokemon.sprites.front_shiny }}" alt="Shiny {{ pokemon.name }}">
-</div>
 <table class="table">
    <thead>
    </thead>
@@ -27,7 +23,7 @@
       <tr>
           <td>Moves</td>
           <td>
-                <p class="text-capitalize">{% for move in pokemon.moves %}<a href="#">{{ move.move.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+                <p>{% for move in pokemon.moves %}<a href="#">{{ move.move.name }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
            </td>
       </tr>
    </tbody>
