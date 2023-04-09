@@ -3,6 +3,10 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 
 
+def home(request):
+    return render(request, 'home.html', {})
+
+
 def pokemon(request, pokemon_id):
     response = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}')
     pokemon_data = response.json()
@@ -29,7 +33,6 @@ def pokemon_list(request):
     # Create a Paginator object to handle the pagination
     paginator = Paginator(pl, 10)
     page = paginator.get_page(page_number)
-
 
     # Render the template with the data and pagination information
     return render(request, 'pokemon_list.html', {

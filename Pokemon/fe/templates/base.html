@@ -4,7 +4,7 @@
 <html>
 <head>
   <title>PokeDjango - {% block title %}{% endblock %}</title>
-  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -13,7 +13,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <img href="/" src="{% static 'favicon.ico' %}">
+      <img src="{% static 'favicon.png' %}">
       <a class="navbar-brand" href="/">PokeApp</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
       </div>
       <form class="d-flex" role="search">
         <input class="form-control me-2" name="search" type="search" placeholder="Search Pokemon" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-success" type="submit">Search</button>
       </form>
     </div>
   </nav>
