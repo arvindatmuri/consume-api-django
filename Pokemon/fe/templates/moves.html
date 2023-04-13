@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Pokemon{% endblock %}
 {% block content %}
-<h1>{{ pokemon.name | capitalize }}</h1>
-<img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
-<img src="{{ pokemon.sprites.front_shiny }}" alt="Shiny {{ pokemon.name }}">
+<h1>{{ move.name | capitalize }}</h1>
 <table class="table">
    <thead>
    </thead>

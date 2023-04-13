@@ -4,6 +4,8 @@
 {% block content %}
 {% load custom_filters %}
 {% load static %}
+
+
 <div class="container">
   <div class="container">
   <img class="img-fluid" src="{% static 'Pokemon_starters.png' %}"/>
@@ -19,10 +21,8 @@
     <tbody>
       {% for pokemon in pokemon_list %}
       <tr>
-<!--        <td>{{pokemon.url|slice:"34:"|slice:":-1"}}</td>-->
         <td>{{pokemon.url|extract_id_from_url:"pokemon"}}</td>
-        <td><a href='pokemon/{{pokemon.url|extract_id_from_url:"pokemon"}}'>{{ pokemon.name|title }}</a></td>
-
+        <td><a href="/pokemon/{{pokemon.url|extract_id_from_url:'pokemon'}}">{{ pokemon.name|title }}</a></td>
       </tr>
       {% endfor %}
     </tbody>
@@ -55,4 +55,6 @@
     </ul>
   </nav>
 </div>
+
 {% endblock %}
+

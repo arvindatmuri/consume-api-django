@@ -27,7 +27,7 @@
       <tr>
           <td>Moves</td>
           <td>
-                <p class="text-capitalize">{% for move in pokemon.moves %}<a href="#">{{ move.move.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+                <p class="text-capitalize">{% for move in pokemon.moves %}<a href="/move/1">{{ move.move.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
            </td>
       </tr>
    </tbody>
