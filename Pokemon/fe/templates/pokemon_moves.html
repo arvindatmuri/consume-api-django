@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Moves{% endblock %}
+{%load static%}
+{% block content %}
+<h1 class="text-capitalize">Move Data</h1>
+<div class="container">
+   <img class="img-fluid" src="{% static 'bulbasaur_attack.png' %}"/>
+   <img class="img-fluid" src="{% static 'charmender_attack.jpg' %}"/>
+</div>
+<table class="table pt-5">
+   <thead>
+   </thead>
+   <tbody>
+   <tr>
+         <td>NAME</td>
+         <td>
+            <p class="text-capitalize"><strong>{{ move.name }}</strong></p>
+         </td>
+      </tr>
+      <tr>
+         <td>ID</td>
+         <td>
+            <p>{{ move.id }}</p>
+         </td>
+      </tr>
+
+   </tbody>
+</table>
+{% endblock %}

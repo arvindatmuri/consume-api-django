@@ -16,7 +16,7 @@ def pokemon(request, pokemon_id):
 def pokemon_move(request, move_id):
     response = requests.get(f'https://pokeapi.co/api/v2/move/{move_id}')
     move_data = response.json()
-    return render(request, 'moves.html', {'move': move_data})
+    return render(request, 'pokemon_moves.html', {'move': move_data})
 
 
 def pokemon_list(request):
