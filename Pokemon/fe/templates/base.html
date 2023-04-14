@@ -26,10 +26,7 @@
           </li>
         </ul>
       </div>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" name="search" type="search" placeholder="Search Pokemon" aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
-      </form>
+      {% block form %}{% endblock %}
     </div>
   </nav>
   <div class="container">
