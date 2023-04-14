@@ -12,3 +12,5 @@ def dash_to_space(value):
 def extract_id_from_url(value, arg):
     if arg == "pokemon":
         return value[34:-1]
+    elif arg == "move":
+        return value[31:-1]

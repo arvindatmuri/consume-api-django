@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Moves{% endblock %}
 {%load static%}
+{%load custom_filters%}
 {% block content %}
 <h1 class="text-capitalize">Move Data</h1>
 <div class="container">
@@ -14,7 +15,7 @@
    <tr>
          <td>NAME</td>
          <td>
-            <p class="text-capitalize"><strong>{{ move.name }}</strong></p>
+            <p class="text-capitalize"><strong>{{ move.name|dash_to_space }}</strong></p>
          </td>
       </tr>
       <tr>
