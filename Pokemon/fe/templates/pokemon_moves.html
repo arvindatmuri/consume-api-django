@@ -24,6 +24,44 @@
             <p>{{ move.id }}</p>
          </td>
       </tr>
+      <tr>
+         <td>Power</td>
+         <td>
+            <p>{{ move.power }}</p>
+         </td>
+      </tr>
+   <tr>
+         <td>Accuracy</td>
+         <td>
+            <p>{{ move.accuracy }}</p>
+         </td>
+      </tr>
+   <tr>
+         <td>PP</td>
+         <td>
+            <p>{{ move.pp }}</p>
+         </td>
+      </tr>
+   <tr>
+         <td>Type</td>
+         <td>
+            <p class="text-capitalize"><a href="/pokemon/type/{{ move.move.url|extract_id_from_url:'type' }}">{{ move.type.name|dash_to_space }}</a></p>
+
+         </td>
+      </tr>
+   <tr>
+         <td>Learned By Pokemon</td>
+         <td>
+                <p class="text-capitalize">{% for poke in move.learned_by_pokemon %}<a href="/pokemon/{{ poke.url|extract_id_from_url:'pokemon' }}">{{ poke.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+   <tr>
+         <td>Damage Class</td>
+         <td>
+            <p class="text-capitalize">{{move.damage_class.name|dash_to_space}}</p>
+
+         </td>
+      </tr>
 
    </tbody>
 </table>
