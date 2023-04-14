@@ -49,13 +49,13 @@ def moves_list(request):
     response = requests.get('https://pokeapi.co/api/v2/move?offset=0&limit=1000')
     ml = response.json()['results']
     # data = response.json()
-    search_query = request.GET.get('search', '')
+    search_query = request.GET.get('move_search', '')
     if search_query:
-        pl = [mv for mv in ml if search_query.lower() in mv['name'].lower()]
+        ml = [mv for mv in ml if search_query.lower() in mv['name'].lower()]
     # Create a Paginator object to handle the pagination
     paginator = Paginator(ml, 10)
     page = paginator.get_page(page_number)
-    print(page.object_list)
+
     # Render the template with the data and pagination information
     return render(request, 'moves_list.html', {
         'move_list': page.object_list,
