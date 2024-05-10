@@ -36,7 +36,7 @@ def pokemon_list(request):
 
     # Render the template with the data and pagination information
     return render(request, 'pokemon_list.html', {
-        'move_list': page.object_list,
+        'pokemon_list': page.object_list,
         'page': page,
     })
 
