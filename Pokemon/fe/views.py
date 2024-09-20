@@ -19,6 +19,12 @@ def pokemon_move(request, move_id):
     return render(request, 'pokemon_moves.html', {'move': move_data})
 
 
+def pokemon_type(request, type_id):
+    response = requests.get(f'https://pokeapi.co/api/v2/type/{type_id}')
+    type_data = response.json()
+    return render(request, 'pokemon_type.html', {'type': type_data})
+
+
 def pokemon_list(request):
     # Get the page number from the request query parameters
     page_number = request.GET.get('page', 1)

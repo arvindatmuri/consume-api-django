@@ -14,3 +14,5 @@ def extract_id_from_url(value, arg):
         return value[34:-1]
     elif arg == "move":
         return value[31:-1]
+    elif arg == "type":
+        return value[31:-1]

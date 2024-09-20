@@ -3,11 +3,12 @@
 {%load static%}
 {%load custom_filters%}
 {% block content %}
-<h1 class="text-capitalize">Move Data</h1>
-<div class="container">
+
+<div class="container text-center pb-5 pt-3">
    <img class="img-fluid" src="{% static 'bulbasaur_attack.png' %}"/>
    <img class="img-fluid" src="{% static 'charmender_attack.jpg' %}"/>
 </div>
+<h1 class="text-capitalize text-center">Move Data</h1>
 <table class="table pt-5">
    <thead>
    </thead>
@@ -45,7 +46,7 @@
    <tr>
          <td>Type</td>
          <td>
-            <p class="text-capitalize"><a href="/pokemon/type/{{ move.move.url|extract_id_from_url:'type' }}">{{ move.type.name|dash_to_space }}</a></p>
+            <p class="text-capitalize"><a href="/pokemon/type/{{ move.type.url|extract_id_from_url:'type' }}">{{ move.type.name|dash_to_space }}</a></p>
 
          </td>
       </tr>

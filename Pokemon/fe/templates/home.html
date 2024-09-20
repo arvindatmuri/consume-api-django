@@ -6,18 +6,24 @@ Home
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-  <img class="img-fluid" src="{% static 'home_page.png' %}"/>
-  <h1 class="display-3 text-center">Welcome to PokeApp  <img class="img-fluid" src="{% static 'pokedex64px.png' %}"/></h1>
+<div class="container text-center">
+  <img class="img-fluid mx-auto" src="{% static 'home_page.png' %}"/>
+
 </div>
-<div class="container-fluid pt-5 pl-4">
+<h1 class="display-3 ml-1 text-center">Welcome to PokeApp  <img class="img-fluid" src="{% static 'pokedex64px.png' %}"/></h1>
+<div class="container-fluid pt-5 pl-6 text-center">
 <p class="text-justify">
   This is a sample App built by Django and Python. This Website has been developed in order to practice and build portfolios using Django by fetching the data from an Open sourced API hosted by Opensource Community <a href="https://pokeapi.co/docs/v2">Poke API</a>. Below are few Modules, you can explore,
 </p>
 </div>
-<div class="d-grid gap-2 pt-5 text-center">
-  <button class="btn btn-primary" type="button" onclick="window.location.href='/pokemon/list'" >Pokemons</button>
-  <button class="btn btn-primary" type="button" onclick="window.location.href='/move/list'">Moves</button>
-  <button class="btn btn-primary" type="button">Types</button>
+<div class="container-fluid d-flex justify-content-center pb-3">
+  <button class="btn btn-primary mx-2" type="button" onclick="window.location.href='/pokemon/list'" >Pokemons</button>
+  <button class="btn btn-primary mx-2" type="button" onclick="window.location.href='/move/list'">Moves</button>
+  <button class="btn btn-primary mx-2" type="button">Types</button>
 </div>
+
+
+{% endblock %}
+{% block footer %}
+  <p align="center">&copy; Built by Arvind</p>
 {% endblock %}

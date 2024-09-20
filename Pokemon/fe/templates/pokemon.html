@@ -2,10 +2,9 @@
 {% block title %}Pokemon{% endblock %}
 {% block content %}
 {% load custom_filters %}
-<h1 class="text-capitalize">{{ pokemon.name}}</h1>
+<h1 class="text-capitalize text-center">{{ pokemon.name}}</h1>
 <div class="container">
 <img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
-
 <img src="{{ pokemon.sprites.front_shiny }}" alt="Shiny {{ pokemon.name }}">
 </div>
 <table class="table">
@@ -19,7 +18,7 @@
       <tr>
          <td>Type</td>
          <td>
-            <p>{% for type in pokemon.types %}{{ type.type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+            <p class="text-capitalize">{% for type in pokemon.types %}<a href="/pokemon/type/{{ type.type.url|extract_id_from_url:'type' }}">{{ type.type.name }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
          </td>
       </tr>
       <tr>

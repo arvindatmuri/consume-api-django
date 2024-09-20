@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block title %}Type{% endblock %}
+{%load static%}
+{%load custom_filters%}
+{% block content %}
+<h1 class="text-capitalize text-center">Type Data</h1>
+<div class="container text-center pb-5 pt-3">
+   <img class="img-fluid" src="{% static 'pokemon_type.png' %}"/>
+<!--   <img class="img-fluid" src="{% static 'charmender_attack.jpg' %}"/>-->
+</div>
+
+<table class="table pt-5">
+   <thead>
+   </thead>
+   <tbody>
+   <tr>
+         <td>NAME</td>
+         <td>
+            <p class="text-capitalize"><strong>{{ type.name|dash_to_space }}</strong></p>
+         </td>
+      </tr>
+      <tr>
+         <td>ID</td>
+         <td>
+            <p>{{ type.id }}</p>
+         </td>
+      </tr>
+      <tr>
+         <td>Pokemon</td>
+         <td>
+                <p class="text-capitalize">{% for pokemon in type.pokemon %}<a href="/pokemon/{{ pokemon.pokemon.url|extract_id_from_url:'pokemon' }}">{{ pokemon.pokemon.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+       <tr>
+         <td>Moves</td>
+         <td>
+                <p class="text-capitalize">{% for move in type.moves %}<a href="/pokemon/move/{{ move.url|extract_id_from_url:'move' }}">{{ move.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+      <tr>
+         <td>Takes Double Damage from</td>
+         <td>
+                <p class="text-capitalize">{% for type in type.damage_relations.double_damage_from %}<a href="/pokemon/type/{{ type.url|extract_id_from_url:'type' }}">{{ type.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+      <tr>
+         <td>Makes Double Damage from</td>
+         <td>
+                <p class="text-capitalize">{% for type in type.damage_relations.double_damage_to %}<a href="/pokemon/type/{{ type.url|extract_id_from_url:'type' }}">{{ type.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+      <tr>
+         <td>Takes Half Damage from</td>
+         <td>
+                <p class="text-capitalize">{% for type in type.damage_relations.half_damage_from %}<a href="/pokemon/type/{{ type.url|extract_id_from_url:'type' }}">{{ type.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+      <tr>
+         <td>Makes Half Damage from</td>
+         <td>
+                <p class="text-capitalize">{% for type in type.damage_relations.half_damage_to %}<a href="/pokemon/type/{{ type.url|extract_id_from_url:'type' }}">{{ type.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+      <tr>
+         <td>Takes No Damage from</td>
+         <td>
+                <p class="text-capitalize">{% for type in type.damage_relations.no_damage_from %}<a href="/pokemon/type/{{ type.url|extract_id_from_url:'type' }}">{{ type.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+      <tr>
+         <td>Makes No Damage from</td>
+         <td>
+                <p class="text-capitalize">{% for type in type.damage_relations.no_damage_to %}<a href="/pokemon/type/{{ type.url|extract_id_from_url:'type' }}">{{ type.name|dash_to_space }}{% if not forloop.last %}, {% endif %}</a>{% endfor %}</p>
+           </td>
+      </tr>
+
+
+   </tbody>
+</table>
+{% endblock %}
